@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(:version => 20130630180958) do
 
   create_table "types", :force => true do |t|
+    t.string   "title"
     t.text     "content"
     t.integer  "user_id"
     t.datetime "created_at", :null => false

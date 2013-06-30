@@ -1,0 +1,16 @@
+<div class="container">
+  
+  <table border=1 class="type-header">
+    <tr> 
+      <td><%= @type.title %></td>
+      <td><%= @type.created_at %></td>
+      <td><%= @type.user.email %></td>
+    </tr>
+  </table>
+  <div class="type-content">
+    <p>
+      <%= @type.content %>
+    </p>
+  </div>
+  
+</div>
