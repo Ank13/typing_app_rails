@@ -1,3 +1,27 @@
+body {
+  background-color: tan;
+  margin-top: 60px;
+}
+
 .container {
-  margin: 60px;
+  margin: 60px auto;
+  width: 95%;
+  height: 400px;
+  padding: 0px 20px 40px 20px;
+  background-color: white;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 10px 10px 5px #888888;
+  font-size: 20px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Fugaz One', cursive;
+}
+
+.regular_button {
+  border-radius: 8px;
+  color: white;
+  background-color: black;
+  width: 200px;
+  margin-top: 30px;
 }

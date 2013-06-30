@@ -5,4 +5,6 @@ Typing::Application.routes.draw do
 
   resources :users, :only => [:index]
 
+  resources :types
+
 end
