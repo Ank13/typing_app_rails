@@ -5,14 +5,12 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-  <header>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-  </header>
-
+  <header class="header_bar">
+   <nav>
     <% if user_signed_in? %>
       Logged in as <strong><%= current_user.email %></strong>.
       <%= link_to 'Edit profile', edit_user_registration_path %> |
@@ -21,13 +19,16 @@
       <%= link_to "Sign up", new_user_registration_path %> |
       <%= link_to "Login", new_user_session_path %>
     <% end %>
+    </nav>
   </div>
+
+  </header>
+
+  <%= yield %>
 
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, id: "flash_#{name}" %>
   <% end %>
-
-<%= yield %>
 
 </body>
 </html>

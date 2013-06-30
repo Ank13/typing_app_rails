@@ -1,0 +1,10 @@
+#flash_alert {
+  background-color: lightgreen;
+  height: 40px;
+  width: 20%;
+  margin-top: 30px;
+  color: #9F6000;
+  background-color: #FEEFB3;
+  border: solid 1px red;
+  padding: 10px;
+}
