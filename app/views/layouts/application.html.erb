@@ -8,22 +8,34 @@
   <link href='http://fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Fugaz+One' rel='stylesheet' type='text/css'>
 </head>
-<body>
 
   <header class="header_bar">
-   <nav>
-    <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to 'Edit profile', edit_user_registration_path %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path %> |
-      <%= link_to "Login", new_user_session_path %>
-    <% end %>
-    </nav>
-  </div>
+
+    <div class="nav-left">
+      <% if user_signed_in? %>
+        <ul>
+          <li> <%= link_to "View All Sets", types_path %> </li>
+          <li> <%= link_to "Make New Set", new_type_path %> </li>
+        </ul>
+      <% end %>
+    </div>
+
+    <div class= "nav-right">
+      <ul>
+      <% if user_signed_in? %>
+        Logged in as <%= current_user.email %>. |
+        <%= link_to 'Edit profile', edit_user_registration_path %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path %> |
+        <%= link_to "Login", new_user_session_path %>
+      <% end %>
+      </ul>
+    </div>
 
   </header>
+
+<body>
 
   <%= yield %>
 

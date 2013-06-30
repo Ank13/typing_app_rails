@@ -1,16 +1,22 @@
 <div class="container">
   
-  <table border=1>
+  <table class="types-table">
     <tr> 
       <td>Title</td>
-      <td>Created at</td>
-      <td>Created by</td>
+      <td> by</td>
+      <td> made on</td>
+      <td> edit</td>
+      <td> delete</td>
     </tr>
     <% @types.each do |type| %>
       <tr> 
-        <td><%= type.title %></td>
-        <td><%= type.created_at %></td>
+        <td><%= link_to type.title, type_path(type) %></td>
         <td><%= type.user.email %></td>
+        <td><%= type.created_at %></td>
+        <% if type.user.id == current_user.id %>
+          <td><%= link_to "Edit", edit_type_path(type) %></td>
+          <td><%= link_to "Delete", type_path(type), method: :delete %></td>
+        <% end %>
       </tr>
     <% end %>
   </table>

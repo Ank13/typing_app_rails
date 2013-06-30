@@ -1,7 +1,9 @@
 <div class="container">
-  
 
+  <%= form_for @type do |f|%>
+    <%= f.text_field :title %><br>
+    <%= f.text_area :content, size: "70x30" %>
+    <%= f.submit "Save Changes" %>
+  <% end %>
 
-
-  
 </div>

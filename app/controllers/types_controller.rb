@@ -21,11 +21,12 @@ class TypesController < ApplicationController
 
   def edit
     @type = Type.find(params[:id])
-    redirect_to types_path(@type.id)
   end
 
   def update
-    Type.update_attributes(params[:type])
+    type = Type.find(params[:id])
+    type.update_attributes(params[:type])
+    redirect_to type_path(type)
   end
 
   def destroy
